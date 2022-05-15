@@ -7,12 +7,12 @@
 
 module led (
 	//input
-	input	wire	clk			,
-	input	wire	rst_n		,
-	input	wire	[3:0]	key	,
+	input	wire			clk		,
+	input	wire			rst_n		,
+	input	wire	[3:0]		key		,
 
 	//output
-	output	reg		[3:0]	led
+	output	reg	[3:0]		led
 );
 
 parameter CNT_MAX = 26'd25_000_000; // 20 * 25000000 = 500ms
@@ -25,14 +25,13 @@ parameter S3 = 3'b010;
 parameter S4 = 3'b011;
 parameter S5 = 3'b100;
 
-
 //state machine
 reg		[2:0]	current_state; 
-reg 	[2:0]	next_state;
+reg 		[2:0]	next_state;
 
 reg		[1:0]  	mode;//four state of each flashing mode
 
-reg	[25:0] cnt_500ms;  //500ms clk : 50MHz 20ns     26bit  
+reg		[25:0] 	cnt_500ms;  //500ms clk : 50MHz 20ns     26bit  
 
 //cnt of 500ms
 always@(posedge clk or negedge rst_n)begin				
