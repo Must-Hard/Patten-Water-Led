@@ -1,11 +1,10 @@
-`timescale 1ns / 1ns    //#10 
+`timescale 1ns / 1ns    //time unit and time accuracy
 module tb_led();
 
-reg				clk;
-reg				rst_n;
-reg		[3:0]	key;
-wire 	[3:0]	led;
-
+reg				clk	;
+reg				rst_n	;
+reg		[3:0]		key	;
+wire 		[3:0]		led	;
 
 //Instantiation
 led 		u_led(
